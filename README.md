@@ -1,16 +1,17 @@
 ## Android 性能优化资源
 
-
 ### 网站博客
 
-以组织或人为单位的教程资源：
+以组织或人为单位的教程资源
 
-- Android 官方教程，关于[性能优化的主题](http://developer.android.com/training/best-performance.html)，[中文翻译](http://hukai.me/android-training-course-in-chinese/best-performance.html)
+- Android 官方教程，关于[性能优化的主题](http://developer.android.com/training/best-performance.html)，[中文翻译](http://hukai.me/android-training-course-in-chinese/best-performance.html) 
+- [Android Developers](https://www.youtube.com/channel/UCVHFbqXqoYvEWM1Ddxl0QDg) Android 官方开发者频道
 - 微信终端开发团队博客，公众号 WeMobileDev ，也可访问[腾讯云专栏](https://cloud.tencent.com/developer/column/1362)
 - [Facebook Android 专栏](https://engineering.fb.com/category/android/)
 - 《性能之巅》作者 [Brendan D.Gregg 的网站](http://www.brendangregg.com)
 - [ClassShark](https://github.com/google/android-classyshark) 作者 Boris Farber 的[个人网站](https://borisfarber.com/)
-- [androidperformance 博客文章目录](https://www.androidperformance.com/2019/12/01/BlogMap/)
+- [Weishu's Notes](http://weishu.me) 维术博客文章很精彩，对虚拟机、插件化研究的很深入 
+- [androidperformance 博客文章目录](https://www.androidperformance.com/2019/12/01/BlogMap/) 
 - [markzhai's home](https://blog.zhaiyifan.cn/) BlockCanary 作者的博客
 - [Trinea 的性能优化系列文章](https://www.trinea.cn/android/performance/)
 - [Deep into Android](https://jsonchao.github.io/) 里面源码剖析和性能总结文章不错
@@ -42,7 +43,7 @@
 
 ### 工具类库
 
-APM
+APM 
 
 - [Matrix](https://github.com/Tencent/matrix) 微信团队开源的应用性能接入框架
 - [ArgusAPM](https://github.com/Qihoo360/ArgusAPM) 360 开源的移动性能监控项目
@@ -63,18 +64,24 @@ APM
 - [DoraemonKit](https://github.com/didi/DoraemonKit) 滴滴开源的常用开发工具集应用，里面的性能检测可视化部分值得看看
 - [AndroidDevMetrics](https://github.com/frogermcs/AndroidDevMetrics) Android 性能度量，可用于排查一些性能问题
 - [MethodTraceMan](https://github.com/zhengcx/MethodTraceMan) 通过插桩统计方法耗时，解决Android App卡顿问题
-- [Pury](https://github.com/NikitaKozlov/Pury) 基于注解的耗时方法监控
+- [Pury](https://github.com/NikitaKozlov/Pury) 基于注解的耗时方法监控 
+- [nanoscope](https://github.com/uber/nanoscope) uber 开源的精确的方法统计工具
 
 
 工具
 
 - TraceView
 - SysTrace
+    - [性能工具Systrace](http://gityuan.com/2016/01/17/systrace/) 
     - [Head First Systrace](https://hujiaweibujidao.github.io/blog/2016/10/03/head-first-systrace/)
 - Android Profiler
 - Hierarchyviewer
 - MAT (Memory Analysis Tool)
-
+- Simpleperf
+    - [如何读懂火焰图？](https://www.ruanyifeng.com/blog/2017/09/flame-graph.html) 阮一峰把火焰图讲解得很清楚
+    - [Flame Graphs](http://www.brendangregg.com/flamegraphs.html) 火焰图官方
+- StrictMode
+- Oprofile
 
 ### 主题文章
 
@@ -88,22 +95,39 @@ APM
 
 性能方法论
 
-- [如何回答性能优化的问题，才能打动阿里面试官？](https://zhuanlan.zhihu.com/p/92910466)
+- [如何回答性能优化的问题，才能打动阿里面试官？](https://zhuanlan.zhihu.com/p/92910466) 
 - [性能优化模式](https://tech.meituan.com/2015/12/10/performance-tuning-pattern.html) 性能优化的原则、反模式、模式...这个思路很不错，虽然是在java服务端，但迁移到 Android 端也适用
 - [“性能问题终结者”Olympic，解决用户痛点背后的秘密是......](https://mp.weixin.qq.com/s/YJJdh3220y7TvBu3hAE3dQ) 手淘性能定位系统 Olympic
 - [剖析应用性能](https://developer.android.com/studio/profile) Android 官方教程，介绍如何使用工具定位性能问题
 
 
-启动速度
+性能优化经验
+
+- [加速你的 Android 应用](https://juejin.im/entry/563ae1b560b216575c53c3d6) 国外程序员优化经验，还有配套[视频](https://www.youtube.com/watch?v=v3DlGOQAIbw)，主要介绍 systrace 等工具使用
+- [Android性能优化来龙去脉总结](https://wetest.qq.com/lab/view/390.html) 鹅厂程序员总结性能优化
+- [移动端性能监控方案Hertz](https://tech.meituan.com/2016/12/19/hertz.html) 美团性能监控方案 Hertz 简介
+
+
+启动速度 & 页面打开速度
 
 - [抖音BoostMultiDex优化实践：Android低版本上APP首次启动时间减少80%（一）](https://mp.weixin.qq.com/s/jINCbTJ5qMaD6NdeGBHEwQ) 从 Android Dalvik 机制入手，解决安装后首次执行 MultiDex 耗时过长问题
 - [抖音BoostMultiDex优化实践：Android低版本上APP首次启动时间减少80%（二）](https://mp.weixin.qq.com/s/ILDTykAwR0xIkW-d1YzRHw)
+- [支付宝 App 构建优化解析：通过安装包重排布优化 Android 端启动性能](https://mp.weixin.qq.com/s/79tAFx6zi3JRG-ewoapIVQ) 对支付宝 Android Apk 文件进行重新布局，来改善 IO 性能，从而提升启动速度
 - [抖音研发实践：基于二进制文件重排的解决方案 APP启动速度提升超15%](https://mp.weixin.qq.com/s/Drmmx5JtjG3UtTFksL6Q8Q) 抖音iOS二进制文件的重新，Android 启动重排可参考
+- [手淘全链路性能优化（上）](https://mp.weixin.qq.com/s/PiqnHezWKWUU0byEhrboRg) 手淘启动速度优化相关技术：启动框架，网络链路优化，自动化测试
+- [手淘全链路性能优化下篇--容器极速之路](https://mp.weixin.qq.com/s/ATOSB8hc1woAObVP3Dtadw) 手淘容器化页面如 H5 及 Weex 相关的优化实践
+- [Android App 启动优化全记录](https://zhuanlan.zhihu.com/p/92497570) 汇集多篇大厂文章的启动思路，可以参考
 
 流畅度
 
 - [内存泄露从入门到精通三部曲之常见原因与用户实践](https://cloud.tencent.com/developer/article/1070780 )
 - [优化安卓应用内存的神秘方法以及背后的原理，一般人我不告诉他](https://cloud.tencent.com/developer/article/1070616) 主动收紧内存背后的原理
+
+
+内存
+
+- [Android O的ART在性能方面的改进简介](https://zhuanlan.zhihu.com/p/27019789)
+- [Android性能优化之内存优化](https://juejin.im/post/5e72b2d151882549236f9cb8)
 
 
 包体积
@@ -112,9 +136,17 @@ APM
 
 耗电
 
-- [Android应用耗电量的统计分析方法和工具](https://hujiaweibujidao.github.io/blog/2017/01/24/how-to-know-your-applications-battery-stats/)
+- [Android应用耗电量的统计分析方法和工具](https://hujiaweibujidao.github.io/blog/2017/01/24/how-to-know-your-applications-battery-stats/) 
+
+
+存储
+
+- [Android 中 SQLite 性能优化](https://droidyue.com/blog/2015/12/13/android-sqlite-tuning/)
 
 
 系统优化
 
 - [那些年，我们一起经历过的 Android 系统性能优化](https://mp.weixin.qq.com/s/RqywGvblWi29irkXO2oM1g) 各大手机厂商的系统性能优化技术介绍
+- [Android 中低内存对性能的影响](https://zhuanlan.zhihu.com/p/84687400) 低端机很重要的部分是要优化内存
+- [当手机厂商说在 Android 底层做优化的时候，它们到底在做什么?](https://www.zhihu.com/question/31043755/answer/51955426)
+- [Android性能优化之虚拟机调优](http://weishu.me/2016/12/23/dive-into-android-optimize-vm-heap/)
